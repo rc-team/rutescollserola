@@ -1,8 +1,9 @@
 Rutescollserola::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/about"
-  get "static_pages/downloads"
-  get "static_pages/who"
+  root to: 'static_pages#home'
+
+  match '/about', to: 'static_pages#about'
+  match '/downloads', to: 'static_pages#downloads'
+  match '/who', to: 'static_pages#who'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

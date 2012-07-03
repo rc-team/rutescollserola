@@ -15,7 +15,7 @@ a {
 
 h1 {
   margin: 0;
-  background: #4a9d0e url(../images/degradat_h1.jpg) repeat-y 0 0;
+  background: #4a9d0e image-url("degradat_h1.jpg") repeat-y 0 0;
   font-size: 34pt;
   font-family: Verdana, sans-serif;
 }
@@ -70,7 +70,7 @@ img {
 
   #top {
     padding-bottom: 16px;
-    background: transparent url(../images/border1.gif) repeat-x left bottom;
+    background: transparent image-url("border1.gif") repeat-x left bottom;
   }
 
   #centre {
@@ -85,7 +85,7 @@ img {
       min-height: 350px;
       margin-left: 10px;
       padding: 10px;
-      background: transparent url(../images/degradat_menu_esq.jpg) repeat-x 0 0;
+      background: transparent image-url("degradat_menu_esq.jpg") repeat-x 0 0;
     }
 
     #main {
@@ -103,7 +103,7 @@ img {
     clear: both;
     margin-top: 30px;
     padding: 25px 0 10px 20px;
-    background: transparent url(../images/border2.gif) repeat-x 0 0;
+    background: transparent image-url("border2.gif") repeat-x 0 0;
     font-size: 9pt;
     color: #666;
   }
@@ -140,7 +140,7 @@ img {
   }
     
   #menu_sup a.sel{
-    background: transparent url(../images/degradat_menu_sup.jpg) repeat-x 0 0;
+    background: transparent image-url("degradat_menu_sup.jpg") repeat-x 0 0;
   }
   
   #menu_sup .clear {

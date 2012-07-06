@@ -42,5 +42,15 @@ describe "StaticPages" do
     let(:page_title) { 'Descàrregues' }
     it_should_behave_like "all static pages"
   end
+
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "qui som?"
+    page.should have_selector 'title', text: full_title('Qui hi ha al darrera')
+    click_link "sobre el web"
+    page.should have_selector 'title', text: full_title('Sobre el web')
+    click_link "descàrregues"
+    page.should have_selector 'title', text: full_title('Descàrregues')
+  end
 end
 

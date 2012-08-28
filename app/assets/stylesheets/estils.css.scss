@@ -1,3 +1,14 @@
+/* IMPORTS */
+
+
+/* MIXINS, VARIABLES, ETC. */
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
 /* ESTILS GENERALS */
 body {
   margin: 0;
@@ -44,11 +55,11 @@ ul.menu {
   list-style: none;
   margin: 0;
   padding: 0;
-}
 
-  ul.menu a {
+  a {
     display: block; 
   }
+}
 
   ul.menu_h li {
     float: left;
@@ -110,116 +121,162 @@ img {
 
 
 /* TOP */
-#top img {
-  display: block;
-  margin-top: 2px;
-}
-
-#menu_sup {
-  margin-top: 2px;
-  background-color: #6f6f6f;
-  width: 100%;
-}
-
-  #menu_sup ul {
-    margin-left: 20px;
+#top {
+  img {
+    display: block;
+    margin-top: 2px;
   }
 
-  #menu_sup li {
-    padding: 4px 10px;
-  }
-  
-  #menu_sup a {
-    padding: 6px 18px 8px;
-    color: #FFF;
-    font-size: 11pt;
-  }
-  
-  #menu_sup a:hover {
-    text-decoration: underline;
-  }
+  #menu_sup {
+    margin-top: 2px;
+    background-color: #6f6f6f;
+    width: 100%;
+
+    ul {
+      margin-left: 20px;
+    }
+
+    li {
+      padding: 4px 10px;
+    }
     
-  #menu_sup a.sel{
-    background: transparent image-url("degradat_menu_sup.jpg") repeat-x 0 0;
+    a {
+      padding: 6px 18px 8px;
+      color: #FFF;
+      font-size: 11pt;
+    
+      &:hover {
+        text-decoration: underline;
+      }
+        
+      &.sel{
+        background: transparent image-url("degradat_menu_sup.jpg") repeat-x 0 0;
+      }
+    }
+    
+    .clear {
+      clear: both;
+      font-size: 1px;
+      height: 1px;
+    }
   }
-  
-  #menu_sup .clear {
-    clear: both;
-    font-size: 1px;
-    height: 1px;
-  }
+}
 
 /* CENTRE */
   /* LEFT */
-  #left ul.menu li {
-    padding: 5px 0 5px 0;
-  }
-  
-  #left ul.menu ul {
-    padding-left: 10px;
-  }
-  
-    #left ul.menu ul li {
-      padding: 2px 0 2px 0;
-    }
+  #left {
+    ul.menu {
+      li {
+        padding: 5px 0 5px 0;
+      }
+    
+      ul {
+        padding-left: 10px;
 
-  #left a {
-    color: #444;
-  }
-  
-  #left a a {
-    font-size: 9pt;
-  }
-  
-  #left a.sel {
-    font-weight: bold;
+        li {
+          padding: 2px 0 2px 0;
+        }
+      }
+    }
+    
+    a {
+      color: #444;
+
+      a {
+        font-size: 9pt;
+      }
+    
+      &.sel {
+        font-weight: bold;
+      }
+    }
   }
   
   /* MAIN */
-  #main a {
-    text-decoration: underline;
-    font-weight: bold;
-  }
-  
-  #main ul {
-    list-style: none; 
-    padding: 0 0 0 15px;
-    margin: 0;
-  }
-  
-  #main ul.ind {
-    list-style: disc; 
-    list-style-position: inside;
-  }
-  #main ul.ind li {
-    padding: 3px 0;
-  }
-  
+  #main {
+    a {
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    
+    ul {
+      list-style: none; 
+      padding: 0 0 0 15px;
+      margin: 0;
+    
+      &.ind {
+        list-style: disc; 
+        list-style-position: inside;
+
+        li {
+          padding: 3px 0;
+        }
+      }
+    }
+    
     #quadre {
       border: 2px solid black;
       width: 350px;
-    }
-    #quadre ul {
-      list-style: disc;
-      margin: 14px 0 14px 15px;
-    }
-    #quadre li {
-      margin: 0;
-      padding: 0;
+      ul {
+        list-style: disc;
+        margin: 14px 0 14px 15px;
+      }
+      li {
+        margin: 0;
+        padding: 0;
+      }
     }
     
     #imatges {
-    	margin-top: 10px;
+      margin-top: 10px;
     }
-    
+  } 
 
   
   /* RIGHT */
 
 /* PEU */
-	#peu img {
+#peu {
+	img {
 		vertical-align: middle;
 	}
-	#peu a {
-	   text-decoration: underline;
+	a {
+   text-decoration: underline;
 	}
+}
+
+/* MISC */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  border: 1px solid #999;
+  padding: 5px;
+  background-color: #EEE;
+  @include box_sizing;
+}
+
+/* FORMS */
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 10px;
+  height: auto;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
+

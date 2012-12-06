@@ -1,5 +1,6 @@
 Rutescollserola::Application.routes.draw do
   resources :users
+  resources :routes
 
   root to: 'static_pages#home'
 

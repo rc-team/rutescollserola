@@ -1,0 +1,10 @@
+<% provide(:title, 'All vertices') %>
+<h2>All vertices</h2>
+TODO
+<ul class="users">
+  <% @vertices.each do |vertex| %>
+    <li>
+      <%= link_to vertex.name, vertex %>
+    </li>
+  <% end %>
+</ul>

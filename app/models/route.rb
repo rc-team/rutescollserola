@@ -14,6 +14,7 @@ class Route < ActiveRecord::Base
   attr_accessible :description, :name, :subtitle
 
   validates :name,        presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
+# database uniqueness not implemented
   validates :description, presence: true
   validates :subtitle,    presence: true, length: { maximum: 50 }
 

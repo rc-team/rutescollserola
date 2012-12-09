@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208113053) do
+ActiveRecord::Schema.define(:version => 20121208150007) do
 
   create_table "routes", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(:version => 20121208113053) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "segments", :force => true do |t|
+    t.string   "name"
+    t.string   "subtitle"
+    t.string   "description"
+    t.integer  "ini_vertex_id"
+    t.integer  "end_vertex_id"
+    t.integer  "distance"
+    t.integer  "height"
+    t.integer  "time"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|

@@ -1,0 +1,10 @@
+<% provide(:title, 'All segments') %>
+<h2>All segments</h2>
+TODO
+<ul class="users">
+  <% @segments.each do |segment| %>
+    <li>
+      <%= link_to segment.name, segment %>
+    </li>
+  <% end %>
+</ul>

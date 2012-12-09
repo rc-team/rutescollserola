@@ -23,7 +23,7 @@ describe Route do
   it { should respond_to(:subtitle) }
   it { should respond_to(:description) }
 
-  it { should be_valid}
+  it { should be_valid }
 
   describe "when name is not present" do
     before { @route.name = " " }

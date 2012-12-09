@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: vertices
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  lat        :float
+#  lon        :float
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+
+
 require 'spec_helper'
 
 describe Vertex do
@@ -17,8 +30,28 @@ describe Vertex do
     it { should_not be_valid}
   end
 
+  describe "when lat is not present" do
+    before { @vertex.lat = " " }
+    it { should_not be_valid}
+  end
+
+  describe "when lon is not present" do
+    before { @vertex.lon = " " }
+    it { should_not be_valid}
+  end
+
   describe "when name is too long" do
     before { @vertex.name = "a" * 51 }
+    it { should_not be_valid }
+  end
+
+  describe "when lat is not numeric" do
+    before { @vertex.lat = "a" }
+    it { should_not be_valid }
+  end
+
+  describe "when lon is not numeric" do
+    before { @vertex.lon = "a" }
     it { should_not be_valid }
   end
 

@@ -22,8 +22,8 @@ describe "Vertex pages" do
     describe "with valid information" do
       before do
         fill_in "Name",      with: "Vertex 1"
-        fill_in "lat",       with: 41.1
-        fill_in "lon",       with: 2.1
+        fill_in "Lat",       with: 41.1
+        fill_in "Lon",       with: 2.1
       end
 
       it "should create a user" do

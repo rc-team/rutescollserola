@@ -5,7 +5,7 @@
 #  id            :integer         not null, primary key
 #  name          :string(255)
 #  subtitle      :string(255)
-#  description   :string(255)
+#  description   :text(255)
 #  ini_vertex_id :integer
 #  end_vertex_id :integer
 #  distance      :integer

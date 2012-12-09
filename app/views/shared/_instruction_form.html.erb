@@ -1,0 +1,22 @@
+<%= form_for([@segment, @instruction]) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <%= # f.input :segment_id, as: :hidden, value: @segment.id
+%>
+  
+  <div class="field">
+    <%= f.label :point %>
+    <%= f.text_field :point %>
+
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+
+    <%= f.label :lat %>
+    <%= f.text_field :lat %>
+
+    <%= f.label :lon %>
+    <%= f.text_field :lon %>
+
+  </div>
+  <%= f.submit "Ok", class: "btn btn-large btn-primary" %>
+<% end %>

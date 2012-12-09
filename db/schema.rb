@@ -11,27 +11,37 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208150007) do
+ActiveRecord::Schema.define(:version => 20121209185121) do
+
+  create_table "instructions", :force => true do |t|
+    t.text     "text"
+    t.integer  "point"
+    t.float    "lat"
+    t.float    "lon"
+    t.integer  "segment_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "routes", :force => true do |t|
     t.string   "name"
     t.string   "subtitle"
-    t.string   "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.text     "description", :limit => 255
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "segments", :force => true do |t|
     t.string   "name"
     t.string   "subtitle"
-    t.string   "description"
+    t.text     "description",   :limit => 255
     t.integer  "ini_vertex_id"
     t.integer  "end_vertex_id"
     t.integer  "distance"
     t.integer  "height"
     t.integer  "time"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "users", :force => true do |t|

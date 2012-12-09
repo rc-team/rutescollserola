@@ -5,7 +5,7 @@
 #  id            :integer         not null, primary key
 #  name          :string(255)
 #  subtitle      :string(255)
-#  description   :string(255)
+#  description   :text(255)
 #  ini_vertex_id :integer
 #  end_vertex_id :integer
 #  distance      :integer
@@ -21,6 +21,8 @@ class Segment < ActiveRecord::Base
 
   belongs_to :end_vertex, :foreign_key => 'end_vertex_id', :class_name => 'Vertex'
   belongs_to :ini_vertex, foreign_key: 'ini_vertex_id', class_name: 'Vertex'
+
+  has_many :instructions, dependent: :destroy, order: 'point ASC'
 
   validates :name,        presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
   validates :subtitle,    length: { maximum: 50 }

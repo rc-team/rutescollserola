@@ -26,4 +26,20 @@ class SegmentsController < ApplicationController
     @segments = Segment.all
   end
 
+  def edit
+    @segment = Segment.find(params[:id])
+    @vertices = Vertex.all
+    @instruction = @segment.instructions.new
+  end
+
+  def update
+    @segment = Segment.find(params[:id])
+    if @segment.update_attributes(params[:user])
+      flash[:success] = "Segment updated"
+      redirect_to @segment
+    else
+      render 'edit'
+    end
+  end
+
 end

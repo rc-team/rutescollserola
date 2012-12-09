@@ -1,0 +1,41 @@
+<% provide(:title, 'Edit segment') %>
+<h2>Edit segment</h2>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@segment) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :subtitle %>
+      <%= f.text_field :subtitle %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+
+      <%= f.label :ini_vertex_id %>
+      <%= f.select(:ini_vertex_id, options_from_collection_for_select(@vertices, 'id', 'name')) %>
+
+      <%= f.label :end_vertex_id %>
+      <%= f.select(:end_vertex_id, options_from_collection_for_select(@vertices, 'id', 'name')) %>
+
+      <%= f.label :distance %>
+      <%= f.text_field :distance %>
+
+      <%= f.label :height %>
+      <%= f.text_field :height %>
+
+      <%= f.label :time %>
+      <%= f.text_field :time %>
+
+      <%= f.submit "Ok", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<h4>Instructions</h4>
+<%= render @segment.instructions %>
+<%= render 'shared/instruction_form' %>
+
+

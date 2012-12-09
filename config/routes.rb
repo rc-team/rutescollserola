@@ -2,7 +2,9 @@ Rutescollserola::Application.routes.draw do
   resources :users
   resources :routes
   resources :vertices
-  resources :segments
+  resources :segments do
+    resources :instructions
+  end
 
   root to: 'static_pages#home'
 

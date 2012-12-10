@@ -1,13 +1,3 @@
-class Instruction < ActiveRecord::Base
-  attr_accessible :lat, :lon, :point, :text
-
-  belongs_to :segment
-
-  validates :text,   presence: true
-  validates :point,  numericality: true
-  validates :lat,    numericality: true
-  validates :lon,    numericality: true
-end
 # == Schema Information
 #
 # Table name: instructions
@@ -22,3 +12,13 @@ end
 #  updated_at :datetime        not null
 #
 
+class Instruction < ActiveRecord::Base
+  attr_accessible :lat, :lon, :point, :text
+
+  belongs_to :segment
+
+  validates :text,   presence: true
+  validates :point,  numericality: true
+  validates :lat,    numericality: true
+  validates :lon,    numericality: true
+end

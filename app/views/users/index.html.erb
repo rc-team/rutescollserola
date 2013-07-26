@@ -1,10 +1,10 @@
-<% provide(:title, 'All segments') %>
-<h2>All segments</h2>
-TODO
+<% provide(:title, 'All users') %>
+<h2>All users</h2>
+
+<%= will_paginate %>
+
 <ul class="users">
-  <% @segments.each do |segment| %>
-    <li>
-      <%= link_to segment.name, segment %>
-    </li>
-  <% end %>
+  <%= render users %>
 </ul>
+
+<%= will_paginate %>

@@ -5,7 +5,7 @@
   <%= link_to image_tag("http://i.creativecommons.org/l/by-nc-sa/2.5/es/80x15.png", alt: "Creative Commons License", style: "border-width:0"), "http://creativecommons.org/licenses/by-nc-sa/2.5/es/deed.ca", rel: 'license' %>
   &nbsp;&nbsp;
   <% if signed_in? %>
-    <%= link_to "Users", '#' %> |
+    <%= link_to "Users", users_path %> |
     <%= link_to "Profile", current_user %> |
     <%= link_to "Settings", edit_user_path(current_user) %> |
     <%= link_to "Sign out", signout_path, method: "delete" %>

@@ -266,6 +266,7 @@ input, textarea, select, .uneditable-input {
   padding: 10px;
   height: auto;
   margin-bottom: 15px;
+  font-size: 10pt;
   @include box_sizing;
 }
 
@@ -275,10 +276,36 @@ input, textarea, select, .uneditable-input {
     list-style: none;
     margin: 0 0 18px 0;
   }
+  .alert {
+    padding: 8px 35px 8px 14px;
+    margin-bottom: 20px;
+    background-color: #fcf8e3;
+    border: 1px solid #fbeed5;
+    color: #c09853;
+  }
+  .alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+  }
+  .alert-danger,
+  .alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+  }
+  .alert-info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #3a87ad;
+  }
 }
 
 .field_with_errors {
-  @extend .control-group;
-  @extend .error;
+  color: #b94a48;
+  input {
+    color: #b94a48;
+    border-color: #b94a48;
+  }
 }
 

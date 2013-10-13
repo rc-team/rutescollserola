@@ -1,15 +1,17 @@
 <div id="peu"> 
- <%= image_tag("cc.ico") %>
-		  2012 www.rutescollserola.com. <a href="about/?llicencia">Some rights reserved</a> 
+  <%= image_tag("cc.ico") %>
+  2012 www.rutescollserola.com. <a href="about/?llicencia">Some rights reserved</a> 
   &nbsp;&nbsp;
+
   <%= link_to image_tag("http://i.creativecommons.org/l/by-nc-sa/2.5/es/80x15.png", alt: "Creative Commons License", style: "border-width:0"), "http://creativecommons.org/licenses/by-nc-sa/2.5/es/deed.ca", rel: 'license' %>
   &nbsp;&nbsp;
-  <% if signed_in? %>
-    <%= link_to "Users", users_path %> |
-    <%= link_to "Profile", current_user %> |
-    <%= link_to "Settings", edit_user_path(current_user) %> |
-    <%= link_to "Sign out", signout_path, method: "delete" %>
-  <% else %>
-    <%= link_to "Sign in", signin_path %>
-  <% end %>
+
+<% if signed_in? %>
+  <%= link_to "Users", users_path %> |
+  <%= link_to "Profile", current_user %> |
+  <%= link_to "Settings", edit_user_path(current_user) %> |
+  <%= link_to "Sign out", signout_path, method: "delete" %>
+<% else %>
+  <%= link_to "Sign in", signin_path %>
+<% end %>
 </div> 
